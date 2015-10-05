@@ -1,0 +1,5 @@
+payzen_response_payment:
+    path:  /response-payment
+    defaults: { _controller: ClabPayzenBundle:Response:payment }
+    requirements:
+        _method: POST

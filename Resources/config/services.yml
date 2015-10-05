@@ -1,0 +1,24 @@
+parameters:
+    clab_payzen.payzen_request.class: 'Clab\PayzenBundle\Service\PayzenRequest'
+    clab_payzen.payzen_response.class: 'Clab\PayzenBundle\Service\PayzenResponse'
+    clab_payzen.payzen_file.class: 'Clab\PayzenBundle\Service\PayzenFile'
+    clab_payzen.payzen_webservice_payment.class: 'Clab\PayzenBundle\Service\PayzenWebservicePayment'
+
+services:
+    clab_payzen.payzen_request:
+        class: %clab_payzen.payzen_request.class%
+        arguments: [ %clab_payzen.parameters%, @doctrine.orm.entity_manager, @service_container, @form.factory ]
+        scope: prototype
+
+    clab_payzen.payzen_response:
+        class: %clab_payzen.payzen_response.class%
+        arguments: [ %clab_payzen.parameters%, @service_container, @doctrine.orm.entity_manager ]
+        scope: request
+
+    clab_payzen.payzen_file:
+        class: %clab_payzen.payzen_file.class%
+        arguments: [ %clab_payzen.parameters2%, @doctrine.orm.entity_manager, @service_container ]
+
+    clab_payzen.payzen_webservice_payment:
+        class: %clab_payzen.payzen_webservice_payment.class%
+        arguments: [ %clab_payzen.parameters%, @service_container, @doctrine.orm.entity_manager ]

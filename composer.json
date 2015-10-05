@@ -1,0 +1,30 @@
+{
+  "name" : "clicklab/payzenbundle",
+  "description" : "PayZen Bundle",
+  "type" : "symfony-bundle",
+  "authors" : [{
+    "name" : "demo",
+    "email" : "demo@company.com"
+  }],
+  "keywords" : [
+    "payzen bundle"
+  ],
+  "license" : [
+    "MIT"
+  ],
+  "require" : {
+  },
+  "autoload" : {
+    "psr-0" : {
+      "Clab\\PayzenBundle" : ""
+    }
+  },
+  "target-dir" : "Clab/PayzenBundle",
+  "repositories" : [{
+  }],
+  "extra" : {
+    "branch-alias" : {
+      "dev-master" : "master"
+    }
+  }
+}
