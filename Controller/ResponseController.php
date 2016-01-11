@@ -12,6 +12,6 @@ class ResponseController extends Controller
     	$response = $this->get('clab_payzen.payzen_response');
     	$valid = $response->compute();
 
-        return new Response(200, $valid ? 'OK' : 'KO');
+        return new Response($valid ? 'OK' : 'KO',200);
     }
 }
